@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+
+.header-text{
+    @apply text-2xl 
+}
+
+}
+
+:root{
+    --main-color: "#0284c7";
+}
