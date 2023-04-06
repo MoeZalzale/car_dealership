@@ -1,12 +1,13 @@
-import Sidebar from '@/components/Sidebar'
+"use client"
+import MainPage from "./MainPage"
+import { FilterContextProvider } from "@/context/FilterContext"
 import React from 'react'
 
 function page() {
   return (
-    <div className='h-full flex'>
-      <Sidebar/>
-
-    </div>
+<FilterContextProvider>
+<MainPage/>
+</FilterContextProvider>
   )
 }
 

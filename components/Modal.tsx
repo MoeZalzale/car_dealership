@@ -10,6 +10,7 @@ import {useCollection} from "react-firebase-hooks/firestore";
 import { collection, query } from 'firebase/firestore';
 import {motion} from "framer-motion"
 import { toast } from 'react-hot-toast';
+import useCars from '@/hooks/useCars';
 
 
 
@@ -25,14 +26,8 @@ function Modal({onClose}:{onClose:()=>void}) {
 
   const [selectedCar,updateCar] = useState("Select a car")
 
-const [cars] = useCollection(query(
-  collection(db, 'cars')
-))
+    const cars = useCars()
 
- useEffect(()=> {
-  console.log(selectedCar)
-
- },[selectedCar])
 
  function handleSubmit (e: FormEvent) {
   e.preventDefault();
@@ -66,8 +61,8 @@ const [cars] = useCollection(query(
           <Select  value={ selectedCar}  onChange={(e:SelectChangeEvent) => updateCar(e.target.value as string)}>
           <MenuItem  value={selectedCar}> Select a car</MenuItem> 
 
-          {cars?.docs.map(car => 
-              <MenuItem key={car.id} value={car.id}> {car.data().year +" "+ car.data().make+ " "+ car.data().model}</MenuItem> 
+          {cars?.map(car => 
+              <MenuItem key={car.id} value={car.id}> {car.year +" "+ car.make+ " "+ car.model}</MenuItem> 
               
               )}
           </Select>

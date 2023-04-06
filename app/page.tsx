@@ -6,18 +6,18 @@ import Testimonials from "@/components/Testimonials";
 import Header from "@/components/Header";
 import Home from "../components/Home";
 export default function page() {
+
   return (
   
     
-    <>
-
-
+<>
+  
 <Home/>
-<WhyUs/>
+ <WhyUs/>
 <CarShow/>
-<Testimonials/>
+<Testimonials/>  
 
-    </>
+</>
    
    
     )

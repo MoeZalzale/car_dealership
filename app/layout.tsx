@@ -8,9 +8,8 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
    <html>
     <head/>
 
-    <body className={font.className + " flex flex-col bg-slate-100 min-h-screen"}>
+    <body className={font.className + " flex flex-col bg-slate-100"}>
       
-    
 <Header/>
 
 <div className="flex flex-col space-y-40">
@@ -18,7 +17,6 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
   {children}
  
 </div>
-
 
 
     </body>
