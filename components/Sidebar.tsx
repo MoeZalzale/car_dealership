@@ -18,7 +18,7 @@ function Sidebar({onClose}:{onClose: ()=>void}) {
         width:0,
     },
     animate:{
-      width:'25dvw',
+      width:'auto',
  
     },
   }

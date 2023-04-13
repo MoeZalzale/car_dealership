@@ -23,10 +23,10 @@ import { Toaster } from 'react-hot-toast'
 const [car] = useDocument(doc(db,'cars',carId))
 
   return (
-    <div className='flex w-full justify-center space-x-5 mt-32'>
+    <div className='flex w-full md:flex-row justify-center space-x-5 md:mt-32 flex-col space-y-5'>
       <Toaster/>
 
-    <div className='flex flex-col w-[50rem] h-[40rem]'>
+    <div className='flex flex-col md:w-[50rem] md:h-[40rem] h-[20rem] w-[calc(100dvw-40px)] '>
       <Carousel images={car?.data()?.images} version='details'/>
     </div>
 

@@ -46,7 +46,7 @@ function SidebarOptions({title,content,funcs}:SidebarProps) {
 
 
   return (
-    <div className='flex flex-col p-5 justify-center'>
+    <div className='flex flex-col p-5 justify-center md:w-[25vw] w-screen'>
     <div className='flex items-center justify-between cursor-pointer' onClick={()=>setIsOpen(prev=> !prev)}>
     <h1 className='font-bold'>{title}</h1>
     <motion.button variants={arrow}  animate='open'><ArrowDownIcon className={`w-5 h-5 `}/></motion.button>

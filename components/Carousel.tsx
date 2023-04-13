@@ -53,7 +53,7 @@ function slideBack (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
 {version === 'details' && 
 <div className='flex space-x-1'>
 {images?.map((img,idx)=> 
-<img  className={`w-20 h-20 cursor-pointer rounded overflow-x-auto border-red-400 border-${index===idx ? '2' : '0'} object-fill `} src={img} alt='' onClick={()=> updateIndex(idx)}/> 
+<img  className={`md:w-20 md:h-20 w-10 h-10 cursor-pointer rounded overflow-x-auto border-red-400 border-${index===idx ? '2' : '0'} object-fill `} src={img} alt='' onClick={()=> updateIndex(idx)}/> 
 
   
   

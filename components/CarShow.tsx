@@ -20,7 +20,7 @@ function CarShow() {
 
         <div className='flex flex-col md:flex-row items-center justify-around pt-10 px-5'>
 
-<div className='w-[50rem] h-[30rem]'>
+<div className='md:w-[50rem] md:h-[30rem] w-[calc(100dvw-40px)] h-[20rem]'>
 
 <Carousel images={cars?.map(car => car.images[0])} version='main'/>
 </div>
