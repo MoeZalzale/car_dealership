@@ -12,7 +12,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       
 <Header/>
 
-<div className="flex flex-col space-y-40">
+<div className="flex flex-col md:space-y-40 space-y-10">
 
   {children}
  

@@ -14,8 +14,8 @@ export default function page() {
   
 <Home/>
  <WhyUs/>
-<CarShow/>
-<Testimonials/>  
+ <CarShow/>
+<Testimonials/>   
 
 </>
    

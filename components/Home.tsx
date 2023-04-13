@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { KeyIcon, ArrowRightCircleIcon } from "@heroicons/react/24/outline"
 import Modal from "./Modal"
 import { AnimatePresence, animate } from 'framer-motion'
@@ -13,6 +13,11 @@ import { duration } from '@mui/material'
 function Home() {
 
   const [modalOpen, updateModel] = useState(false)
+
+  useEffect(()=>{
+    modalOpen ? document.body.style.overflowY = 'hidden' : document.body.style.overflowY = 'auto'
+
+  },[modalOpen])
 
   function close(){
     updateModel(false)
@@ -34,19 +39,19 @@ function Home() {
 
   return (
   
-    <div className=" flex items-center justify-center h-[80vh]">
+    <div className=" flex items-center justify-center h-[80dvh]">
       <div><Toaster/></div>
       
 
 
 
-        <div className='max-w-sm flex flex-col space-y-5 justify-center items-start m-10'> 
+        <div className='max-w-sm flex flex-col space-y-5 justify-center items-start m-10 '> 
 
-    <h1 className='text-7xl max-w-full'>SAVE. <span className='text-main '>BIG</span>. TODAY.</h1>
+    <h1 className='text-7xl '>SAVE. <span className='text-main '>BIG</span>. TODAY.</h1>
     <span>Why wait? Get you dream car<span className='text-main  text-lg'> NOW</span>.</span>
-        <div className='flex space-x-3  '>
+        <div className='flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-3 flex-1 '>
         <button onClick ={() => updateModel(true)}className="bg-main py-3 text-white px-6 text-lg rounded flex whitespace-nowrap items-center justify-between shadow-black/50 shadow-md hover:shadow-lg hover:shadow-black transition-shadow ease-out duration-150"> <KeyIcon className='h-5 w-5 mr-3'/> <span> Book a Test Drive </span></button>
-        <button className="bg-black text-white py-3 text-lg px-4 rounded flex whitespace-nowrap items-center justify-between shadow-black/50 shadow-md hover:shadow-lg hover:shadow-main transition-shadow ease-out duration-150">  <span> Check Our Lot </span> <ArrowRightCircleIcon className='h-6  w-6 ml-3'/></button>
+        <button className="bg-black text-white py-3 text-lg px-6 rounded flex whitespace-nowrap items-center justify-between shadow-black/50 shadow-md hover:shadow-lg hover:shadow-main transition-shadow ease-out duration-150">  <span> Check Our Lot </span> <ArrowRightCircleIcon className='h-6  w-6 ml-3'/></button>
 
 
 
@@ -54,7 +59,7 @@ function Home() {
 
         </div>
 
-        <div className=' relative '>
+        <div className=' hidden lg:block relative '>
           
     <Image src={"/home_car.png"} alt="none" width={800} height={800} style={{"objectFit": "contain"}}/>
       <motion.div className='flex space-x-3 absolute z-[-1] top-0  right-[50%] translate-x-[50%] opacity-70 h-[30rem] overflow-hidden'  animate="animate" initial="initial">
@@ -66,7 +71,7 @@ function Home() {
         </div>
         
     <AnimatePresence>
-    {modalOpen && <Modal onClose= {close}/>}
+    {modalOpen && <Modal def={{id:'Select a car',name:'Select a car'}} onClose= {close}/>}
     </AnimatePresence>
   </div>
 

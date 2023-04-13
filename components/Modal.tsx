@@ -13,8 +13,13 @@ import { toast } from 'react-hot-toast';
 import useCars from '@/hooks/useCars';
 
 
+type CarItem = {
+  id:string,
+  name: string
+}
 
-function Modal({onClose}:{onClose:()=>void}) {
+
+function Modal({onClose,def}:{onClose:()=>void, def: CarItem}) {
   const animate = {
     rest: { y: "-100vh", opacity:0},
   
@@ -24,9 +29,11 @@ function Modal({onClose}:{onClose:()=>void}) {
 }
 
 
-  const [selectedCar,updateCar] = useState("Select a car")
+  const [selectedCar,updateCar] = useState(def.id)
 
-    const cars = useCars()
+  const cars = useCars((def.id!=='Select a car' ? {run:false} : {run:true}))
+
+console.log(cars)
 
 
  function handleSubmit (e: FormEvent) {
@@ -38,7 +45,7 @@ function Modal({onClose}:{onClose:()=>void}) {
   
     return (
         <motion.div variants={animate} initial="rest" animate="enter" exit="exit"
-     className='fixed inset-0   backdrop-blur-sm flex justify-center items-center z-[40]' onClick={()=> onClose()}>
+     className='fixed inset-0   backdrop-blur-md flex justify-center items-center z-[40]' onClick={()=> onClose()}>
             <div className="bg-white rounded-2xl flex flex-col shadow-md items-center justify-center p-5" onClick={(e)=> e.stopPropagation()}> 
             <div className='flex items-center text-xl p-5 w-full '>
               <h1 className='flex-1'>Book a test drive</h1>
@@ -58,10 +65,10 @@ function Modal({onClose}:{onClose:()=>void}) {
           </LocalizationProvider>
     
         
-          <Select  value={ selectedCar}  onChange={(e:SelectChangeEvent) => updateCar(e.target.value as string)}>
-          <MenuItem  value={selectedCar}> Select a car</MenuItem> 
+          <Select disabled={def.id ==="Select a car" ? false : true} value={ selectedCar} onChange={(e:SelectChangeEvent) => updateCar(e.target.value as string)}>
+          <MenuItem  value={selectedCar}> {def.name}</MenuItem> 
 
-          {cars?.map(car => 
+          {def.id ==="Select a car" && cars?.map(car => 
               <MenuItem key={car.id} value={car.id}> {car.year +" "+ car.make+ " "+ car.model}</MenuItem> 
               
               )}

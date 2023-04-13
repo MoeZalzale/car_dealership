@@ -21,14 +21,15 @@ function Testimonials() {
   return (
     <div>
             <div className='  h-20 bg-gradient-to-b to-slate-200 from-transparent w-full'></div>
+
     <div className=' relative flex flex-col items-center space-y-20 bg-slate-200'>
         <div className='absolute top-0 h-20 bg-gradient-to-b to-slate-200 z-[20]  from-transparent w-full'></div>
-        <div className='flex flex-col items-center'>
-                    <h1 className='text-6xl'>ENOUGH TALKING FROM US</h1>
-                    <h1 className='text-2xl'>See what some of our customers have to say</h1>
+        <div className='flex flex-col items-center px-5'>
+                    <h1 className='md:text-6xl text-2xl font-bold'>ENOUGH TALKING FROM US</h1>
+                    <h1 className='md:text-2xl text-lg'>See what our customers have to say</h1>
         </div>
 
-        <div className='flex max-w-7xl items-start justify-between w-full'>
+        <div className='flex flex-col md:flex-row max-w-7xl  items-center md:items-start justify-between w-full space-y-5 md:space-y-0'>
 
         <motion.div variants={ variants} custom={1} initial="hidden" whileInView="show" viewport={{once:true}}   className='flex flex-col items-center bg-white shadow-lg rounded  py-10 px-5 '>
             <div className='max-w-xs font-bold'>
