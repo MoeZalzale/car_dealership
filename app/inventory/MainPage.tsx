@@ -45,8 +45,8 @@ sidebarOpen ? document.body.style.overflowY ="hidden" : document.body.style.over
 
       </div>
       <div className=' p-5  items-center md:flex md:space-x-3 grid grid-cols-[repeat(2,minmax(0,7rem))] justify-center md:justify-start gap-x-5 md:gap-x-0 gap-y-3'>
-        {[...makeFilters, ...modelFilters].map(filter => 
-        <div className='rounded-2xl bg-slate-200 py-1 px-4 flex items-center space-x-2 justify-around' >
+        {[...makeFilters, ...modelFilters].map((filter,idx) => 
+        <div key={idx} className='rounded-2xl bg-slate-200 py-1 px-4 flex items-center space-x-2 justify-around' >
           <span>{filter}</span>
           <XMarkIcon className='w-4 h-4 cursor-pointer' onClick={()=> {makeFilters.includes(filter)?  removeMakesFilter(filter) : removeModelFilter(filter)}}/>
         
@@ -55,7 +55,7 @@ sidebarOpen ? document.body.style.overflowY ="hidden" : document.body.style.over
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5   rounded p-5'>
         {cars?.filter(car => (makeFilters.length ===0 ||  makeFilters.some(filter => car.make===filter)) &&
                              (modelFilters.length ===0 ||  modelFilters.some(filter => car.model===filter))
-                             ).map(c => <Carbox {...c as Car}/>)
+                             ).map((c,idx) => <Carbox key={idx} {...c as Car}/>)
 
         }
       </div>

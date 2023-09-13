@@ -33,7 +33,7 @@ function Testimonials() {
 
         <motion.div variants={ variants} custom={1} initial="hidden" whileInView="show" viewport={{once:true}}   className='flex flex-col items-center bg-white shadow-lg rounded  py-10 px-5 '>
             <div className='max-w-xs font-bold'>
-                            <p>" One of the friendliest staff smoothest experiences I have had buying a car. Would definitely recommend this place to anyone trying to find the right vehicle"</p>
+                            <p> One of the friendliest staff smoothest experiences I have had buying a car. Would definitely recommend this place to anyone trying to find the right vehicle</p>
                     </div>
 
                     <div className='flex p-5 items-center justify-between w-full flex-nowrap'>
@@ -60,7 +60,7 @@ function Testimonials() {
 
           <motion.div variants={ variants} custom={2} initial="hidden" whileInView="show" viewport={{once:true}} className='flex flex-col items-center bg-white shadow-lg rounded  py-10 px-5 '>
                     <div className='max-w-xs font-bold'>
-                            <p>" One of the friendliest staff smoothest experiences I have had buying a car. Would definitely recommend this place to anyone trying to find the right vehicle"</p>
+                            <p> One of the friendliest staff smoothest experiences I have had buying a car. Would definitely recommend this place to anyone trying to find the right vehicle</p>
                     </div>
 
                     <div className='flex p-5 items-center justify-between w-full flex-nowrap'>
@@ -89,7 +89,7 @@ function Testimonials() {
 
           <motion.div variants={ variants} custom={3} initial="hidden" whileInView="show" viewport={{once:true}}  className='flex flex-col items-center bg-white shadow-lg rounded  py-10 px-5 '>
                     <div className='max-w-xs font-bold'>
-                            <p>" One of the friendliest staff smoothest experiences I have had buying a car. Would definitely recommend this place to anyone trying to find the right vehicle"</p>
+                            <p> One of the friendliest staff smoothest experiences I have had buying a car. Would definitely recommend this place to anyone trying to find the right vehicle</p>
                     </div>
 
                     <div className='flex p-5 items-center justify-between w-full flex-nowrap'>

@@ -57,8 +57,8 @@ function SidebarOptions({title,content,funcs}:SidebarProps) {
 {isOpen &&
 <motion.div key='options' className='overflow-hidden grid grid-cols-2' variants={accordian} initial='rest' exit='rest' animate='animate' transition={{ duration: 0.5}}
 >
-{ content?.map(c => 
-<div className='flex  items-center'>
+{ content?.map((c,idx) => 
+<div key={idx} className='flex  items-center'>
     <h1 className='flex-[0.30]'>{c}</h1>
     <Radio sx={{ '& .MuiSvgIcon-root': {fontSize: 20,},}} checked={list.includes(c)} onClick={() => list.includes(c)? remove(c): add(c) }/>
     </div>

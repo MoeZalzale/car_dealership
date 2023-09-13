@@ -35,7 +35,7 @@ function WhyUs() {
           <div className='flex flex-col items-center bg-white shadow-lg rounded  py-10  px-5 h-72'>
                 <TruckIcon className='w-20 h-20 text-black mb-5 shrink-0'/>
                 <div className='max-w-xs text-lg flex-1  '>
-                      24/7 roadside assisstance. Yes you read that right. Is your car not starting from home? from work? We'll come to you.
+                      24/7 roadside assisstance. Yes you read that right. Is your car not starting from home? from work? We will come to you.
 
                 </div>
           </div>
