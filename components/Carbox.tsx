@@ -21,7 +21,7 @@ id: string
 
 function Carbox({color,images,make,model,year,id}: Car) {
 
-  const router = useRouter()
+  const {push} = useRouter()
 
 const [index, updateIndex] = useState(0);
 
@@ -35,7 +35,7 @@ function slideForward () {
   }
   
   return (
-    <div className='flex flex-col bg-white rounded-2xl pb-5 shadow-black shadow-md hover:shadow-lg hover:shadow-black transition-shadow ease-out cursor-pointer overflow-hidden  h-[20rem]' onClick={()=> router.push(`/inventory/${id}`)}>
+    <div className='flex flex-col bg-white rounded-2xl pb-5 shadow-black shadow-md hover:shadow-lg hover:shadow-black transition-shadow ease-out cursor-pointer overflow-hidden  h-[20rem]' onClick={()=> push(`/inventory/${id}`)}>
 <Carousel images={images} version='inv'/>
 <div className='flex items-center justify-center'>
     {`${year} ${make} ${model} (${color})`}

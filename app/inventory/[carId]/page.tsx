@@ -10,8 +10,7 @@ import { useCollection, useDocument } from 'react-firebase-hooks/firestore'
 import { Toaster } from 'react-hot-toast'
 
 
-
- function Page({params: {carId}}: {params: {carId:string}}) {
+function Page({params: {carId}}: {params: {carId:string}}) {
 
   const [modalOpen, updateModal] = useState(false)
 
@@ -21,6 +20,8 @@ import { Toaster } from 'react-hot-toast'
   }
 
 const [car] = useDocument(doc(db,'cars',carId))
+
+
 
   return (
     <div className='flex w-full md:flex-row justify-center space-x-5 md:mt-32 flex-col space-y-5'>

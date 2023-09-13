@@ -22,7 +22,6 @@ const [cars] = useCollection(query
     (collection(db,"cars")))
 
     useEffect(()=>{
-        console.log("running")
         updateList(cars?.docs.map((car) => ({id:car.id, ...car.data()} as Car )))
 
         },[cars])

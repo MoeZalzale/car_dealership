@@ -4,8 +4,9 @@ import React from 'react'
 import Carousel from "./Carousel"
 import { ArrowRightIcon } from '@heroicons/react/24/solid'
 import useCars from '@/hooks/useCars'
+import { useRouter } from 'next/navigation'
 function CarShow() {
-
+  const {push} = useRouter()
   const cars = useCars()
   return (
     <div  className='flex flex-col'>
@@ -30,7 +31,7 @@ function CarShow() {
 <h1 >
   THE <span className='text-main'> BIGGEST</span> INVENTORY IN TOWN
 </h1>
-<button className="bg-main py-3 whitespace-nowrap w-[60%] text-white px-6 text-sm md:text-lg rounded flex  items-center justify-around shadow-black/50 shadow-md hover:shadow-lg hover:shadow-black transition-shadow ease-out duration-150"> VIEW OUR LOT NOW  <ArrowRightIcon className='w-5 h-5'/></button>
+<button onClick={()=> push('/inventory') }className="bg-main py-3 whitespace-nowrap w-[60%] text-white px-6 text-sm md:text-lg rounded flex  items-center justify-around shadow-black/50 shadow-md hover:shadow-lg hover:shadow-black transition-shadow ease-out duration-150"> VIEW OUR LOT NOW  <ArrowRightIcon className='w-5 h-5'/></button>
 
 </div>
 </div>

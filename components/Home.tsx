@@ -7,12 +7,13 @@ import { AnimatePresence, animate } from 'framer-motion'
 import { Toaster } from 'react-hot-toast'
 import {motion} from "framer-motion"
 import { duration } from '@mui/material'
-
+import {useRouter} from 'next/navigation'
 
 
 function Home() {
 
   const [modalOpen, updateModel] = useState(false)
+  const {push} = useRouter()
 
   useEffect(()=>{
     modalOpen ? document.body.style.overflowY = 'hidden' : document.body.style.overflowY = 'auto'
@@ -51,7 +52,7 @@ function Home() {
     <span>Why wait? Get you dream car<span className='text-main  text-lg'> NOW</span>.</span>
         <div className='flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-3 flex-1 '>
         <button onClick ={() => updateModel(true)}className="bg-main py-3 text-white px-6 text-lg rounded flex whitespace-nowrap items-center justify-between shadow-black/50 shadow-md hover:shadow-lg hover:shadow-black transition-shadow ease-out duration-150"> <KeyIcon className='h-5 w-5 mr-3'/> <span> Book a Test Drive </span></button>
-        <button className="bg-black text-white py-3 text-lg px-6 rounded flex whitespace-nowrap items-center justify-between shadow-black/50 shadow-md hover:shadow-lg hover:shadow-main transition-shadow ease-out duration-150">  <span> Check Our Lot </span> <ArrowRightCircleIcon className='h-6  w-6 ml-3'/></button>
+        <button onClick ={() => push('/inventory')}className="bg-black text-white py-3 text-lg px-6 rounded flex whitespace-nowrap items-center justify-between shadow-black/50 shadow-md hover:shadow-lg hover:shadow-main transition-shadow ease-out duration-150" >  <span> Check Our Lot </span> <ArrowRightCircleIcon className='h-6  w-6 ml-3'/></button>
 
 
 
